@@ -17,7 +17,7 @@ class SimpTracker(utils.Cog):
     async def add(self, ctx:utils.Context, user:discord.Member):
         """Sets you as simping for a user"""
 
-        # No pls not yourself
+        # Filter out stuff
         if user == ctx.author or user == ctx.guild.me:
             return await ctx.send("Well, _obviously_.")
         elif user.bot:
@@ -43,9 +43,9 @@ class SimpTracker(utils.Cog):
     async def remove(self, ctx:utils.Context, user:discord.Member):
         """Removes you from simping for a user"""
 
-        # No pls not yourself
+        # Filter out stuff
         if user == ctx.author:
-            return await ctx.send("Well, _obviously_.")
+            return await ctx.send("wh-Why?")
         elif user == ctx.guild.me:
             return await ctx.send("I won't pretend I'm not offended.")
         elif user.bot:
